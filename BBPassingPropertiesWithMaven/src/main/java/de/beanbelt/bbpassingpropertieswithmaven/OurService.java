@@ -12,9 +12,6 @@ import javax.ejb.Stateless;
 @Stateless
 public class OurService {
 
-	public OurService() {
-	}
-
 	public void readProperties() throws IOException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		InputStream stream = classLoader.getResourceAsStream("filtered_resource.properties");
@@ -25,7 +22,5 @@ public class OurService {
 		String value = properties.getProperty("filtered_value", "not_filtered");
 
 		System.out.println("Value: " + value);
-
 	}
-
 }
